@@ -28,8 +28,20 @@ public class KichoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
-		int age = Integer.parseInt(request.getParameter("age"));
-		System.out.println(id+"가 아이디고"+age+"가 나이데슐");
+		String pwd = request.getParameter("pwd");
+		//int pwd = Integer.parseInt(request.getParameter("pwd"));
+		System.out.println(id+"가 아이디고"+pwd+"가 비번");
+		String DBid = "manager";
+		String DBpwd = "manager";
+		String DBname = "Seiko";
+		if ((DBid.equals(id))&&(DBpwd.equals(pwd))) {
+			System.out.println("로그인 성공"+DBname);
+			response.sendRedirect("resultT.jsp?name="+DBname);
+			
+		}else {
+			System.out.println("로그인 실패");			
+			response.sendRedirect("2_Kicho_servlet.jsp");
+		}
 	}
 
 	/**

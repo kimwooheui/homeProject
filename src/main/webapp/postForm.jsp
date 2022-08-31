@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="get" action="KichoServlet" name="frm">
+<form method="post" action="postForm" name="frm">
 	id: <input type="text" name="id"><br>
 	pwd: <input type="text" name="pwd">
 		<input type="submit" value="전송" onClick="return check()">
@@ -17,11 +17,10 @@
 <script type="text/javascript">
 	function check() {
 		if (frm.id.value =="") {
-			alert("입력하라 아이디를");
+			alert("아이디가 비었습니다");
 			return false;
 		}else if (frm.pwd.value =="") {
-
-			alert("입력하라 나이를");
+			alert("비번이 비었습니다");
 			return false;
 		}else{			
 		return true;
